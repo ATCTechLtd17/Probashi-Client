@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaAppStore, FaGooglePlay, FaUser } from 'react-icons/fa';
+import appImage from '../assets/app.png';
+import appImage1 from '../assets/app2.png';
 
 const slides = [
   {
@@ -11,7 +13,7 @@ const slides = [
       femaleMigrants: "200 K"
     },
     buttonText: "Request for Portal",
-    image: "/api/placeholder/800/600"
+    image: appImage1
   },
   {
     title: "Recruitment Re-imagined",
@@ -23,10 +25,9 @@ const slides = [
       "Job Management"
     ],
     buttonText: "Login/Sign up to recruitment portal",
-    image: "/api/placeholder/800/600"
+    image: appImage
   }
 ];
-
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -56,7 +57,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-[600px] overflow-hidden bg-gradient-to-r from-emerald-400 to-teal-600">
+    <div className="relative h-[500px] overflow-hidden bg-gradient-to-r from-cyan-400 to-sky-400">
       <AnimatePresence initial={false} custom={currentSlide}>
         <motion.div
           key={currentSlide}
@@ -71,14 +72,15 @@ const HeroSection = () => {
           }}
           className="absolute w-full h-full"
         >
-          <div className="container mx-auto px-4 py-12 h-full">
+          <div className="container mx-auto px-4 py-8 h-full">
             <div className="grid md:grid-cols-2 gap-8 items-center h-full">
+              {/* Left content column */}
               <div className="text-white">
                 <motion.h1 
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-4xl md:text-5xl font-bold mb-4"
+                  className="text-3xl md:text-4xl font-bold mb-3"
                 >
                   {slides[currentSlide].title}
                 </motion.h1>
@@ -86,7 +88,7 @@ const HeroSection = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-xl mb-6"
+                  className="text-lg mb-4"
                 >
                   {slides[currentSlide].subtitle}
                 </motion.p>
@@ -95,26 +97,27 @@ const HeroSection = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="space-y-4"
+                  className="space-y-3"
                 >
-                  <button className="flex items-center space-x-2 bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  <button className="flex items-center space-x-2 bg-white text-teal-600 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     <FaUser />
                     <span>{slides[currentSlide].buttonText}</span>
                   </button>
 
-                  <div className="flex space-x-4 mt-4">
-                    <button className="flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                      <FaAppStore className="text-2xl" />
+                  <div className="flex space-x-4 mt-3">
+                    <button className="flex items-center space-x-2 bg-black text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                      <FaAppStore className="text-xl" />
                       <span>App Store</span>
                     </button>
-                    <button className="flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                      <FaGooglePlay className="text-2xl" />
+                    <button className="flex items-center space-x-2 bg-black text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                      <FaGooglePlay className="text-xl" />
                       <span>Google Play</span>
                     </button>
                   </div>
                 </motion.div>
               </div>
 
+              {/* Right image column */}
               <motion.div
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -122,11 +125,11 @@ const HeroSection = () => {
                 className="relative h-full hidden md:block"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full max-w-2xl">
+                  <div className="relative w-full max-w-lg">
                     <motion.img
                       src={slides[currentSlide].image}
                       alt="Platform Preview"
-                      className="w-full h-auto rounded-lg shadow-2xl"
+                      className="w-full h-auto rounded-lg shadow-xl max-h-96 object-contain"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.6 }}
@@ -137,16 +140,16 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="absolute top-4 right-4 bg-white p-4 rounded-lg shadow-lg"
+                        className="absolute top-2 right-2 bg-white p-3 rounded-lg shadow-lg"
                       >
-                        <div className="flex space-x-8">
+                        <div className="flex space-x-6">
                           <div className="text-teal-600">
-                            <p className="text-sm">Aspiring Migrants</p>
-                            <p className="text-2xl font-bold">{slides[0].stats.aspiringMigrants}</p>
+                            <p className="text-xs">Aspiring Migrants</p>
+                            <p className="text-lg font-bold">{slides[0].stats.aspiringMigrants}</p>
                           </div>
                           <div className="text-teal-600">
-                            <p className="text-sm">Female Migrants</p>
-                            <p className="text-2xl font-bold">{slides[0].stats.femaleMigrants}</p>
+                            <p className="text-xs">Female Migrants</p>
+                            <p className="text-lg font-bold">{slides[0].stats.femaleMigrants}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -157,9 +160,9 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="absolute top-4 right-4 bg-white p-4 rounded-lg shadow-lg"
+                        className="absolute top-2 right-2 bg-white p-3 rounded-lg shadow-lg"
                       >
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           {slides[1].features.map((feature, index) => (
                             <motion.div
                               key={feature}
@@ -168,8 +171,8 @@ const HeroSection = () => {
                               transition={{ delay: 0.8 + index * 0.1 }}
                               className="flex items-center space-x-2 text-teal-600"
                             >
-                              <div className="w-2 h-2 bg-teal-600 rounded-full" />
-                              <span>{feature}</span>
+                              <div className="w-1.5 h-1.5 bg-teal-600 rounded-full" />
+                              <span className="text-sm">{feature}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -188,7 +191,7 @@ const HeroSection = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
+            className={`w-2 h-2 rounded-full transition-colors ${
               currentSlide === index ? "bg-white" : "bg-white/50"
             }`}
           />
@@ -197,5 +200,6 @@ const HeroSection = () => {
     </div>
   );
 };
+
 
 export default HeroSection;

@@ -6,12 +6,12 @@ import ProcessSection from '../components/Process/ProcessSection';
 
 const Home = () => {
   return (
-    <>
+    <div className='overflow-x-hidden'>
       <HeroSection />
       <StatisticsSection />
       <ServicesSection />
       <ProcessSection />
-    </>
+    </div>
   );
 };
 
