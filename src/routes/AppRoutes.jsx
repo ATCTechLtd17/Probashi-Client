@@ -9,6 +9,9 @@ import Government from '../pages/Government';
 import Portals from '../pages/Portals';
 import Cards from '../pages/Cards';
 import PrivateRoute from './PrivateRoute';
+import EmigrationClearance from '../pages/EmigrationClearance';
+import PDOBooking from '../pages/PDOBooking';
+import BMETRegistration from '../pages/BMETRegistration';
 
 const AppRoutes = () => {
   return (
@@ -36,10 +39,34 @@ const AppRoutes = () => {
       />
       <Route
         path="/government/*"
-        element={
-          <PrivateRoute>
+        element= {
+          
             <Government />
-          </PrivateRoute>
+            
+        }
+      />
+      <Route
+        path="/Emigration/*"
+        element= {
+          
+            <EmigrationClearance />
+            
+        }
+      />
+      <Route
+        path="/pdobooking/*"
+        element= {
+          
+            <PDOBooking />
+            
+        }
+      />
+       <Route
+        path="/bmetregistration/*"
+        element= {
+          
+            <BMETRegistration />
+            
         }
       />
       <Route
