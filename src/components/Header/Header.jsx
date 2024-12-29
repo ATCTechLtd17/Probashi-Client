@@ -12,7 +12,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <Link to="/" className="text-xl font-bold text-primary">
-              Ami Probashi
+          Probashi - DhakaBoss
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">
@@ -52,7 +52,7 @@ const Header = () => {
             </button>
             <div className="flex items-center space-x-2 text-gray-600">
               <img src="/qr-code.svg" alt="QR Code" className="w-6 h-6" />
-              <span className="text-sm">Get Ami Probashi App</span>
+              <span className="text-sm">Get Probashi App</span>
             </div>
           </div>
         </div>
