@@ -1,19 +1,21 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 import Services from '../pages/Services';
 import Recruitment from '../pages/Recruitment';
 import Government from '../pages/Government';
 import Portals from '../pages/Portals';
 import Cards from '../pages/Cards';
+import PrivateRoute from './PrivateRoute';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       
       {/* Protected Routes */}
       <Route

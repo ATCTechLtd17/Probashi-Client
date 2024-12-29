@@ -1,30 +1,84 @@
-export const navigationItems = {
+export const navigationData = {
   services: [
-    { label: 'Government Services', path: '/services/government' },
-    { label: 'BRAC Services', path: '/services/brac' },
-    { label: 'Job & Training', path: '/services/jobs' },
-    { label: 'Lifestyle Services', path: '/services/lifestyle' }
+    {
+      title: 'Government',
+      items: [
+        { label: 'BMET Registration', path: '/services/bmet-registration' },
+        { label: 'PDO (Pre-Departure Orientation)', path: '/services/pdo' },
+        { label: 'General Training', path: '/services/training' },
+        { label: 'BMET Clearance (Smart Card)', path: '/services/clearance' }
+      ]
+    },
+    {
+      title: 'Job',
+      items: [
+        { label: 'Find Job', path: '/services/find-job' },
+        { label: 'Make CV', path: '/services/make-cv' },
+        { label: 'Take Career Consultancy', path: '/services/career' }
+      ]
+    },
+    {
+      title: 'Life Style',
+      items: [
+        { label: 'Online Doctor (Probashi Health)', path: '/services/health' },
+        { label: 'Entertainment', path: '/services/entertainment', badge: 'Coming Soon' },
+        { label: 'e-Learning', path: '/services/learning', badge: 'Coming Soon' }
+      ]
+    },
+    {
+      title: 'BRAC',
+      items: [
+        { label: 'Returnee Migrants', path: '/services/returnee' },
+        { label: 'Skill Training', path: '/services/skill-training' },
+        { label: 'Overseas Employment', path: '/services/overseas' }
+      ]
+    }
   ],
   recruitment: [
-    { label: 'Foreign Employers', path: '/recruitment/foreign' },
-    { label: 'Local Employers', path: '/recruitment/local' },
-    { label: 'Training Institutes', path: '/recruitment/training' }
-  ],
-  government: [
-    { label: 'MoEWOE', path: '/government/moewoe' },
-    { label: 'BMET', path: '/government/bmet' },
-    { label: 'TTC', path: '/government/ttc' },
-    { label: 'UDC', path: '/government/udc' },
-    { label: 'Airport Emigration', path: '/government/airport' },
-    { label: 'DEMO Offices', path: '/government/demo' }
+    {
+      title: 'Foreign Employers',
+      items: [
+        { label: 'Talent Pool', path: '/recruitment/foreign/talent-pool' },
+        { label: 'Post Job', path: '/recruitment/foreign/post-job' },
+        { label: 'Video Interview', path: '/recruitment/foreign/video-interview' },
+        { label: 'Connect to Local Recruiting Agencies', path: '/recruitment/foreign/connect' },
+        { label: 'Government Compliance', path: '/recruitment/foreign/compliance' }
+      ]
+    },
+    {
+      title: 'Local Employers',
+      items: [
+        { label: 'Talent Pool', path: '/recruitment/local/talent-pool' },
+        { label: 'Post Job', path: '/recruitment/local/post-job' },
+        { label: 'Video Interview', path: '/recruitment/local/video-interview' }
+      ]
+    },
+    {
+      title: 'Training Institute',
+      items: [
+        { label: 'Broadcast courses', path: '/recruitment/training/courses' },
+        { label: 'Online Enrollment', path: '/recruitment/training/enrollment' },
+        { label: 'Digital Attendance', path: '/recruitment/training/attendance' }
+      ]
+    }
   ],
   portals: [
-    { label: 'Government Portal', path: '/portals/government' },
-    { label: 'Recruitment Portal', path: '/portals/recruitment' }
-  ],
-  cards: [
-    { label: 'BMET Service Card', path: '/cards/bmet' },
-    { label: 'Training Certificate', path: '/cards/training' },
-    { label: 'PDO Documents', path: '/cards/pdo' }
+    {
+      title: 'Government Portal',
+      items: [
+        { label: 'BMET', path: '/portals/government/bmet' },
+        { label: 'Technical Training Center (TTC)', path: '/portals/government/ttc' },
+        { label: 'DEMO Office', path: '/portals/government/demo' },
+        { label: 'BIMT', path: '/portals/government/bimt' }
+      ]
+    },
+    {
+      title: 'Recruitment Portal',
+      items: [
+        { label: 'Recruiting Agency', path: '/portals/recruitment/agency' },
+        { label: 'Foreign Employer', path: '/portals/recruitment/employer' },
+        { label: 'RA Account Request', path: '/portals/recruitment/request' }
+      ]
+    }
   ]
 };
