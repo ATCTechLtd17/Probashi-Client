@@ -46,7 +46,7 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/Emigration/*"
+        path="/emigration/*"
         element= {
           
             <EmigrationClearance />

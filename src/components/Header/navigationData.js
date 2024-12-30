@@ -3,10 +3,10 @@ export const navigationData = {
     {
       title: 'Government',
       items: [
-        { label: 'BMET Registration', path: '/services/bmet-registration' },
-        { label: 'PDO (Pre-Departure Orientation)', path: '/services/pdo' },
+        { label: 'BMET Registration', path: '/bmetregistration' },
+        { label: 'PDO (Pre-Departure Orientation)', path: '/pdobooking' },
         { label: 'General Training', path: '/services/training' },
-        { label: 'BMET Clearance (Smart Card)', path: '/services/clearance' }
+        { label: 'BMET Clearance (Smart Card)', path: '/emigration' }
       ]
     },
     {
