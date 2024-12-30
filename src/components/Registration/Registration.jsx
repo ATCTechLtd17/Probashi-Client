@@ -4,7 +4,7 @@ import PersonalInfoStep from '../components/Registration/PersonalInfoStep';
 import AgeSelector from '../components/Registration/AgeSelector';
 import EducationSelector from '../components/Registration/EducationSelector';
 
-const Register = () => {
+const Registration = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     skills: [],
@@ -85,4 +85,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Registration;
