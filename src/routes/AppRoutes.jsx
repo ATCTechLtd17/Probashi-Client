@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-import Register from '../pages/Register';
+
 import Services from '../pages/Services';
 import Recruitment from '../pages/Recruitment';
 import Government from '../pages/Government';
@@ -12,13 +12,14 @@ import PrivateRoute from './PrivateRoute';
 import EmigrationClearance from '../pages/EmigrationClearance';
 import PDOBooking from '../pages/PDOBooking';
 import BMETRegistration from '../pages/BMETRegistration';
+import Registration from '../pages/Registration';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/register" element={<Registration />} />
       
       {/* Protected Routes */}
       <Route

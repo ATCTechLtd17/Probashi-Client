@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { LanguageProvider } from './components/context/LanguageContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
