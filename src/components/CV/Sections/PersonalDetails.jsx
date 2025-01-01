@@ -7,6 +7,7 @@ const PersonalDetails = ({ data, updateData }) => {
     fullName: language === 'bn' ? 'পূর্ণ নাম' : 'Full Name',
     email: language === 'bn' ? 'ইমেইল' : 'Email',
     phone: language === 'bn' ? 'ফোন' : 'Phone',
+    passport:language==='bn'? 'পাসপোর্ট নম্বর' : 'Passport Number',
     address: language === 'bn' ? 'ঠিকানা' : 'Address',
     summary: language === 'bn' ? 'সারসংক্ষেপ' : 'Professional Summary'
   };

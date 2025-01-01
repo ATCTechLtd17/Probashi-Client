@@ -60,8 +60,8 @@ const CVBuilder = () => {
             <button
               key={section.id}
               onClick={() => setActiveSection(section.id)}
-              className={`btn btn-sm ${
-                activeSection === section.id ? 'btn-primary' : 'btn-ghost'
+              className={`btn px-4 ${
+                activeSection === section.id ? 'flex items-center px-2 text-white bg-teal-600 rounded-md hover:bg-teal-700' : 'btn-ghost'
               }`}
             >
               {section.label}
