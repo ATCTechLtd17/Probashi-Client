@@ -10,9 +10,10 @@ const PersonalSection = ({ data }) => {
     <div className="mb-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{data.fullName}</h1>
       <div className="text-gray-600 space-y-1">
-        {data.email && <p>{data.email}</p>}
-        {data.phone && <p>{data.phone}</p>}
-        {data.address && <p>{data.address}</p>}
+        {data.email && <p>Email: {data.email}</p>}
+        {data.phone && <p>Phone: {data.phone}</p>}
+        {data.passport && <p>Passport: {data.passport}</p>}
+        {data.address && <p>Address: {data.address}</p>}
       </div>
       {data.summary && (
         <div className="mt-4">
