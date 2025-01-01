@@ -3,17 +3,17 @@ export const navigationData = {
     {
       title: 'Government',
       items: [
-        { label: 'BMET Registration', path: '/services/bmet-registration' },
-        { label: 'PDO (Pre-Departure Orientation)', path: '/services/pdo' },
+        { label: 'BMET Registration', path: '/bmetregistration' },
+        { label: 'PDO (Pre-Departure Orientation)', path: '/pdobooking' },
         { label: 'General Training', path: '/services/training' },
-        { label: 'BMET Clearance (Smart Card)', path: '/services/clearance' }
+        { label: 'BMET Clearance (Smart Card)', path: '/emigration' }
       ]
     },
     {
       title: 'Job',
       items: [
         { label: 'Find Job', path: '/services/find-job' },
-        { label: 'Make CV', path: '/services/make-cv' },
+        { label: 'Make CV', path: '/make-cv' },
         { label: 'Take Career Consultancy', path: '/services/career' }
       ]
     },

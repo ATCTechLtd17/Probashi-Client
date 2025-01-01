@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DropdownMenu from './DropdownMenu';
 import { navigationData } from './navigationData';
+import LanguageToggle from '../Registration/LanguageToggle';
 
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
@@ -44,12 +45,8 @@ const Header = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <button className="px-3 py-1 text-sm font-medium text-white bg-primary rounded hover:bg-primary-dark">
-              EN
-            </button>
-            <button className="px-3 py-1 text-sm font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white">
-              বাং
-            </button>
+            
+            <LanguageToggle />
             <div className="flex items-center space-x-2 text-gray-600">
               <img src="/qr-code.svg" alt="QR Code" className="w-6 h-6" />
               <span className="text-sm">Get Probashi App</span>
