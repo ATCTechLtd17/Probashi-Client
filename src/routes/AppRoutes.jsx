@@ -13,6 +13,7 @@ import EmigrationClearance from '../pages/EmigrationClearance';
 import PDOBooking from '../pages/PDOBooking';
 import BMETRegistration from '../pages/BMETRegistration';
 import Registration from '../pages/Registration';
+import MakeCV from '../pages/MakeCV';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Registration />} />
+      <Route path="/make-cv" element={<MakeCV />} />
       
       {/* Protected Routes */}
       <Route

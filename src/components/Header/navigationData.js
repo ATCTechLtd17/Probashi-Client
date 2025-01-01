@@ -13,7 +13,7 @@ export const navigationData = {
       title: 'Job',
       items: [
         { label: 'Find Job', path: '/services/find-job' },
-        { label: 'Make CV', path: '/services/make-cv' },
+        { label: 'Make CV', path: '/make-cv' },
         { label: 'Take Career Consultancy', path: '/services/career' }
       ]
     },
