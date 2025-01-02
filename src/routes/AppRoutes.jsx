@@ -1,95 +1,133 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+//import BMETLayout from '../layouts/BMETLayout';
+
+// Page imports
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-
+import Registration from '../pages/Registration';
+import MakeCV from '../pages/MakeCV';
 import Services from '../pages/Services';
 import Recruitment from '../pages/Recruitment';
 import Government from '../pages/Government';
 import Portals from '../pages/Portals';
 import Cards from '../pages/Cards';
-import PrivateRoute from './PrivateRoute';
 import EmigrationClearance from '../pages/EmigrationClearance';
 import PDOBooking from '../pages/PDOBooking';
 import BMETRegistration from '../pages/BMETRegistration';
-import Registration from '../pages/Registration';
-import MakeCV from '../pages/MakeCV';
+//import Dashboard from '../components/BMET/Dashboard';
 
-const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/make-cv" element={<MakeCV />} />
-      
-      {/* Protected Routes */}
-      <Route
-        path="/services/*"
-        element={
-          <PrivateRoute>
-            <Services />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/recruitment/*"
-        element={
-          <PrivateRoute>
-            <Recruitment />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/government/*"
-        element= {
-          
-            <Government />
-            
-        }
-      />
-      <Route
-        path="/emigration/*"
-        element= {
-          
-            <EmigrationClearance />
-            
-        }
-      />
-      <Route
-        path="/pdobooking/*"
-        element= {
-          
-            <PDOBooking />
-            
-        }
-      />
-       <Route
-        path="/bmetregistration/*"
-        element= {
-          
-            <BMETRegistration />
-            
-        }
-      />
-      <Route
-        path="/portals/*"
-        element={
-          <PrivateRoute>
-            <Portals />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/cards/*"
-        element={
-          <PrivateRoute>
-            <Cards />
-          </PrivateRoute>
-        }
-      />
-    </Routes>
-  );
-};
+// BMET Dashboard components
+import BMETDashboard from '../pages/BMET/Dashboard';
+import BMETProfile from '../pages/BMET/Profile';
+import BMETMedical from '../pages/BMET/Medical';
+import BMETTraining from '../pages/BMET/Training';
+import BMETManpower from '../pages/BMET/Manpower';
+import BMETCertificates from '../pages/BMET/Certificates';
+import BMETStatus from '../pages/BMET/Status';
+import App from '../App';
+
+const AppRoutes = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      // Public routes
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'register',
+        element: <Registration />
+      },
+      {
+        path: 'make-cv',
+        element: <MakeCV />
+      },
+      {
+        path: 'government',
+        element: <Government />
+      },
+      {
+        path: 'emigration',
+        element: <EmigrationClearance />
+      },
+      {
+        path: 'pdobooking',
+        element: <PDOBooking />
+      },
+      {
+        path: 'bmetregistration',
+        element: <BMETRegistration />
+      },
+
+      // // Protected routes
+      // {
+      //   element: <ProtectedLayout />,
+      //   children: [
+      //     {
+      //       path: 'services/*',
+      //       element: <Services />
+      //     },
+      //     {
+      //       path: 'recruitment/*',
+      //       element: <Recruitment />
+      //     },
+      //     {
+      //       path: 'portals/*',
+      //       element: <Portals />
+      //     },
+      //     {
+      //       path: 'cards/*',
+      //       element: <Cards />
+      //     }
+      //   ]
+      // },
+
+      // BMET Dashboard routes
+      // {
+      //   path: 'bmet',
+      //   element: <BMETLayout />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <BMETDashboard />
+      //     },
+      //     {
+      //       path: 'profile',
+      //       element: <BMETProfile />
+      //     },
+      //     {
+      //       path: 'medical',
+      //       element: <BMETMedical />
+      //     },
+      //     {
+      //       path: 'training',
+      //       element: <BMETTraining />
+      //     },
+      //     {
+      //       path: 'manpower',
+      //       element: <BMETManpower />
+      //     },
+      //     {
+      //       path: 'certificates',
+      //       element: <BMETCertificates />
+      //     },
+      //     {
+      //       path: 'status',
+      //       element: <BMETStatus />
+      //     }
+      //   ]
+      // }
+    ]
+  }
+]);
+
 
 export default AppRoutes;
