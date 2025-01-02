@@ -1,22 +1,18 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { LanguageProvider } from './context/LanguageContext';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import AppRoutes from './routes/AppRoutes';
+import { LanguageProvider } from "./context/LanguageContext";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <div className="min-h-screen bg-gray-50 flex flex-col">
-          <Header />
-          <main className="flex-grow">
-            <AppRoutes />
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </LanguageProvider>
   );
 }

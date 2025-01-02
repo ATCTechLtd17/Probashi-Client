@@ -1,19 +1,17 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-
-import Services from '../pages/Services';
-import Recruitment from '../pages/Recruitment';
-import Government from '../pages/Government';
-import Portals from '../pages/Portals';
-import Cards from '../pages/Cards';
-import PrivateRoute from './PrivateRoute';
-import EmigrationClearance from '../pages/EmigrationClearance';
-import PDOBooking from '../pages/PDOBooking';
-import BMETRegistration from '../pages/BMETRegistration';
-import Registration from '../pages/Registration';
-import MakeCV from '../pages/MakeCV';
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Services from "../pages/Services";
+import Recruitment from "../pages/Recruitment";
+import Government from "../pages/Government";
+import Portals from "../pages/Portals";
+import Cards from "../pages/Cards";
+import PrivateRoute from "./PrivateRoute";
+import EmigrationClearance from "../pages/EmigrationClearance";
+import PDOBooking from "../pages/PDOBooking";
+import BMETRegistration from "../pages/BMETRegistration";
+import Registration from "../pages/Registration";
+import MakeCV from "../pages/MakeCV";
 
 const AppRoutes = () => {
   return (
@@ -22,7 +20,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Registration />} />
       <Route path="/make-cv" element={<MakeCV />} />
-      
+
       {/* Protected Routes */}
       <Route
         path="/services/*"
@@ -40,38 +38,10 @@ const AppRoutes = () => {
           </PrivateRoute>
         }
       />
-      <Route
-        path="/government/*"
-        element= {
-          
-            <Government />
-            
-        }
-      />
-      <Route
-        path="/emigration/*"
-        element= {
-          
-            <EmigrationClearance />
-            
-        }
-      />
-      <Route
-        path="/pdobooking/*"
-        element= {
-          
-            <PDOBooking />
-            
-        }
-      />
-       <Route
-        path="/bmetregistration/*"
-        element= {
-          
-            <BMETRegistration />
-            
-        }
-      />
+      <Route path="/government/*" element={<Government />} />
+      <Route path="/emigration/*" element={<EmigrationClearance />} />
+      <Route path="/pdobooking/*" element={<PDOBooking />} />
+      <Route path="/bmetregistration/*" element={<BMETRegistration />} />
       <Route
         path="/portals/*"
         element={

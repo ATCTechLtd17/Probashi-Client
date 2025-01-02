@@ -1,20 +1,19 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const TypewriterText = ({ text, delay = 0 }) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, 50);
-      
+
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, text]);
@@ -32,7 +31,7 @@ const ServiceCard = ({ number, title, href, index }) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.a 
+    <motion.a
       ref={ref}
       href={href}
       className="flex items-center gap-4 p-4 rounded-lg hover:bg-emerald-50 transition-colors duration-200"
@@ -41,7 +40,7 @@ const ServiceCard = ({ number, title, href, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.02 }}
     >
-      <motion.div 
+      <motion.div
         className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center flex-shrink-0"
         whileHover={{ rotate: 360 }}
         transition={{ duration: 0.5 }}
@@ -53,24 +52,24 @@ const ServiceCard = ({ number, title, href, index }) => {
   );
 };
 
-const GovernmentServices = () => {
+const Government = () => {
   const services = [
     {
       title: "Swift and Secure Emigration Clearance",
-      href: "#emigration-clearance"
+      href: "#emigration-clearance",
     },
     {
       title: "Instantly Book PDO",
-      href: "#pdo"
+      href: "#pdo",
     },
     {
       title: "Register to BMET",
-      href: "#bmet"
+      href: "#bmet",
     },
     {
       title: "Get Trained",
-      href: "#training"
-    }
+      href: "#training",
+    },
   ];
 
   const contentRef = useRef(null);
@@ -79,19 +78,21 @@ const GovernmentServices = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div 
+        <motion.div
           ref={contentRef}
           className="space-y-6"
           initial={{ opacity: 0, y: 50 }}
-          animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          animate={
+            isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+          }
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-bold text-gray-900">
             <TypewriterText text="Government Services" />
           </h1>
-          
+
           <p className="text-gray-600 leading-relaxed">
-            <TypewriterText 
+            <TypewriterText
               text="The digitisation of government services such as migrant registration, 
               pre-departure orientation, and emigration clearance has revolutionized 
               migration by eliminating paperwork, accelerating timelines, and reducing 
@@ -101,7 +102,7 @@ const GovernmentServices = () => {
             />
           </p>
 
-          <motion.button 
+          <motion.button
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -116,7 +117,7 @@ const GovernmentServices = () => {
           </motion.button>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="bg-white rounded-xl shadow-lg p-6"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -139,4 +140,4 @@ const GovernmentServices = () => {
   );
 };
 
-export default GovernmentServices;
+export default Government;
